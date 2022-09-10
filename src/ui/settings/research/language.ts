@@ -3,5 +3,7 @@ export const language = {
   researchRecoil: 'Recoil Compensation',
   researchRecoilEnable: 'Enable',
   researchRecoilPercentage: 'Recoil Compensation (%)',
-  researchWarning: 'These features may be unstable and cause detection. Proceed with caution.'
+  researchWarning: 'These features may be unstable and cause detection. Proceed with caution.',
+  researchAimbot: 'Aimbot',
+  researchAimbotEnable: 'Enable',
 };
