@@ -24,6 +24,11 @@ export const RecoilView = ui.createView<{vm: app.RecoilViewModel}>(({vm}) => (
       onChange={(_, x) => vm.percentage.change(Number(x))}
       value={vm.percentage.value}
       min={0} max={1} step={0.01} />
+    <ui.material.FormControlLabel
+      label={app.language.Aimbot}
+      control={<ui.material.Switch
+        onChange={x => vm.Aimbot.change(x.target.checked)}
+        checked={vm.Aimbot.value} />} /
   </ui.material.FormGroup>
 ));
 
