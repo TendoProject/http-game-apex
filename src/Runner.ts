@@ -7,6 +7,7 @@ export class Runner {
     private readonly map = new app.features.Map(canvas),
     private readonly radar = new app.features.Radar(canvas),
     private readonly recoil = new app.features.Recoil(),
+     private readonly aimbot = new app.features.aimbot(),
     private readonly sense = new app.features.Sense()) {}
   
   static create() {
@@ -17,6 +18,7 @@ export class Runner {
 
   run(core: app.core.Core, vm: ui.MainViewModel) {
     const localPlayer = core.playerList.get(core.localPlayer.value);
+    const players = core.entityList.value;
     this.updateResearch(vm, localPlayer);
     this.updateSense(core, vm, localPlayer);
     this.canvas.height = window.innerHeight;
@@ -64,6 +66,8 @@ export class Runner {
   private updateResearch(vm: ui.MainViewModel, localPlayer?: app.core.Player) {
     if (vm.settings.research.recoil.enable.value && localPlayer && vm.settings.research.recoil.options)
       this.recoil.update(localPlayer, vm.settings.research.recoil.options);
+    if (vm.settings.research.aimbot.enable.value)
+      this.aimbot.update(levelName, localPlayer, players);
   }
 
   private updateSense(core: app.core.Core, vm: ui.MainViewModel, localPlayer?: app.core.Player) {
