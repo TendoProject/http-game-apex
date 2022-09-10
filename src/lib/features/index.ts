@@ -3,4 +3,4 @@ export * from './Map';
 export * from './Radar';
 export * from './Recoil';
 export * from './Sense';
-export * from './aimbot';
+export * from './Aimbot';
