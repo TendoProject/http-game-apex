@@ -4,6 +4,7 @@ import * as ui from 'ui';
 
 export class RecoilViewModel {
   readonly enable = new ui.BoolStorage('settings.recoil.enable', false);
+  readonly longRangeMode = new ui.BoolStorage('settings.sense.longRangeMode', false);
   readonly percentage = new ui.NumberStorage('settings.recoil.percentage', 0.75);
 
   constructor() {
